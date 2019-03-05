@@ -44,7 +44,7 @@
         <div class="col-md-6 login-form-2">
             <div class="login-logo">
 
-                <img src="assets/images/{{'logo.PNG'}}"  />
+                <img src="assets/images/{{'logo.PNG'}}" />
 
 
                 {{--<img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>--}}
@@ -61,21 +61,62 @@
 
 
 
+            <div class="panel-body">
+                <form class="form-horizontal" method="POST" action="{{ route('admin.login.submit') }}">
+                    {{ csrf_field() }}
 
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Email *" value="" />
-            </div>
-            <div class="form-group">
-                <input type="password" class="form-control" placeholder="Your Password *" value="" />
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btnSubmit" value="Login" />
-            </div>
-            <div class="form-group">
+                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <label for="email" class=" control-label">E-Mail Address</label>
+                        <div class="form-group">
+                            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
 
-                <a href="#" class="btnForgetPwd" value="Login">Forget Password?</a>
+                            @if ($errors->has('email'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+                    </div>
+
+
+                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                        <label for="password" class="control-label">Password</label>
+
+                        <div class="form-group">
+                            <input id="password" type="password" class="form-control" name="password" required>
+                            @if ($errors->has('password'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <div class="col-md-6 col-md-offset-4">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="">
+                            <button type="submit" class="btnSubmit">
+                                Login
+                            </button>
+
+                            <a class="btnForgetPwd " style="font-size: 14px;" href="{{ route('admin.password.request') }}">
+                                Forgot Your Password?
+                            </a>
+                        </div>
+                    </div>
+                </form>
             </div>
-            </form>
         </div>
     </div>
 </div>

@@ -15,9 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/tiologin',function (){
-    return view('tione/ualogin');
-});
+//Route::get('/tiologin',function (){
+//    return view('tione/ualogin');
+//});
 
 
 
