@@ -15,10 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::get('/tiologin',function (){
-//    return view('tione/ualogin');
-//});
 
+Route::get('/sign',function (){
+return view('tione/uasignup');
+});
 
 
 
@@ -26,16 +26,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/users/logout','Auth\LoginController@userLogout')->name('user.logout ');
-Route::get('/site',function (){
-   return view('index');
+Route::get('/signup','Auth\RegisterController@showRegistrationForm')->name('users.signup.submit');
 
 
-
-
-
-
-
-});
 
 Route::prefix('admin')->group(function (){
 

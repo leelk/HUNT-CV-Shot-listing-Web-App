@@ -56,35 +56,35 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand logo" href="index.html"><img src="{{asset('assets')}}/assets/img/logo.PNG" alt="" style="height: 50px;"></a>
+                        <a class="navbar-brand logo" href="{{url('/')}}"><img src="{{asset('assets')}}/assets/img/logo.PNG" alt="" style="height: 50px;"></a>
                     </div>
 
                     <div class="collapse navbar-collapse" id="navbar">
                         <!-- Start Navigation List -->
                         <ul class="nav navbar-nav">
                             <li>
-                                <a href="#">
-                                    Candidates <i class="fa fa-angle-down"></i>
+                                <a href="{{route('admin.login.submit')}}">
+                                    Login <i class="fa fa-angle-down"></i>
                                 </a>
-                                <ul class="dropdown">
-                                    <li>
-                                        <a href="job-alerts.html">
-                                            Job Alerts
-                                        </a>
-                                    </li>
-                                </ul>
+                                {{--<ul class="dropdown">--}}
+                                    {{--<li>--}}
+                                        {{--<a href="job-alerts.html">--}}
+                                            {{--<strong>Signup/Loging </strong>--}}
+                                        {{--</a>--}}
+                                    {{--</li>--}}
+                                {{--</ul>--}}
                             </li>
                             <li>
-                                <a href="#">
-                                    Employers <i class="fa fa-angle-down"></i>
+                                <a href="{{route('users.signup.submit')}}">
+                                    Signup <i class="fa fa-angle-down"></i>
                                 </a>
-                                <ul class="dropdown">
-                                    <li>
-                                        <a href="{{route('admin.login.submit')}}">
-                                           Signup / Login
-                                        </a>
-                                    </li>
-                                </ul>
+                                {{--<ul class="dropdown">--}}
+                                    {{--<li>--}}
+                                        {{--<a href="{{route('admin.login.submit')}}">--}}
+                                           {{--Signup / Login--}}
+                                        {{--</a>--}}
+                                    {{--</li>--}}
+                                {{--</ul>--}}
                             </li>
                         </ul>
 
