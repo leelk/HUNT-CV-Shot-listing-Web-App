@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Admin;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
-class RegisterController extends Controller
+class AdminRegisterController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -36,7 +37,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('guest:admin');
     }
 
     /**
@@ -48,14 +49,12 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'f_name' => 'required|string|max:30',
-            'l_name' => 'required|string|max:30',
-            'email' => 'required|string|email|max:255|unique:users',
+            'c_name' => 'required|string|max:30',
+            'email' => 'required|string|email|max:30|unique:admins',
+            'c_phone' => 'required|string|max:10',
             'password' => 'required|string|min:6|confirmed',
-            'phone' => 'required|string|max:10',
-            'dob' =>'required|string|max:08',
-            'address' => 'required|string|max:50',
-            'p_summery' =>'required|string|max:255',
+            'c_field' => 'string',
+            'c_city' =>'required|string|max:28',
         ]);
     }
 
@@ -67,18 +66,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'f_name' => $data['f_name'],
-            'l_name' => $data['l_name'],
+        return Admin::create([
+            'c_name' => $data['c_name'],
             'email' => $data['email'],
+            'c_phone' => $data['c_phone'],
             'password' => bcrypt($data['password']),
-            'phone' => $data['phone'],
-            'dob' => $data['dob'],
-            'address' => $data['address'],
-            'p_summery' => $data['p_summery'],
-
-
-
+            'c_field' => $data['c_field'],
+            'c_city' => $data['c_city'],
 
         ]);
 
