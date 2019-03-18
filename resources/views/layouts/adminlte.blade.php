@@ -50,7 +50,7 @@
 
 
 
-                    <p><strong>{{Auth::user()->name}} </strong></p>
+                    <p><strong>{{Auth::user()->c_name}} </strong></p>
                     <!-- Status -->
                     <a href="#"><i class="fa fa-circle text-success"></i> {{Auth::user()->job_title}}</a>
                 </div>
