@@ -42,19 +42,6 @@
 
     {{--welcome.blade copy end --}}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     {{--Profile Image --}}
     <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
     <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -98,102 +85,141 @@
     <div class="row">
 
 
-
-
-
-
-
-
-
-
-
-
-
         <div class="col-md-6 login-form-1">
             <div class="title_candidate">
                 <h3>Signup as a Candidate</h3>
             </div>
             <div class="panel-body">
-                <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+
+
+
+
+
+                <form class="form-horizontal" method="POST" action="{{ route('register') }}" >
                     {{ csrf_field() }}
+                    {{--Profile Image --}}
 
-                        {{--Profile Image --}}
+                    {{--<div class="form-group">--}}
+                    {{--<div class="form-group"  style="text-align: center" >--}}
+                    {{--<img id="blah" src="https://bit.ly/2q98CcI"style="width: 150px; height: 150px" alt=""/><br>--}}
+                    {{--<label for="file-upload"style="margin-left:5px;color: #d9edf7">Upload a Profile Photo</label>--}}
 
-                    <div class="form-group">
-                        <div class="form-group"  style="text-align: center" >
-                            <img id="blah" src="https://bit.ly/2q98CcI"style="width: 150px; height: 150px" alt=""/><br>
-                            <label for="file-upload"style="margin-left:5px;color: #d9edf7">Upload a Profile Photo</label>
+                    {{--<input type='file' onchange="readURL(this);" style="margin-left: 100px"/>--}}
 
-                            <input type='file' onchange="readURL(this);" style="margin-left: 100px"/>
-
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
+                    {{--</div>--}}
+                    {{--</div>--}}
 
 
 
 
                     {{--First name and LastName--}}
-                    <div class="form-group">
+                    <div class="form-group" style="height: 40px">
                         <div class="form-group">
                             <div class="row">
-                                <div class="col-sm">
-                                    <input id="f_name" type="text" class="form-control" placeholder="First Name" name="email" value="{{ old('email') }}" required autofocus>
+                                <div class="col-sm {{ $errors->has('f_name') ? ' has-error' : '' }}">
+                                    <input type="text" id="f_name" class="form-control " placeholder="First Name" name="f_name" value="{{ old('f_name') }}" required autofocus>
+
+                                    @if ($errors->has('f_name'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('f_name') }}</strong>
+                                    </span>
+                                    @endif
+
+
+
                                 </div>
-                                <div class="col-sm">
-                                    <input id="l_name" type="text" class="form-control" placeholder="Last Name" name="email" value="{{ old('email') }}" required autofocus>
+                                <div class="col-sm {{ $errors->has('l_name') ? ' has-error' : '' }}">
+                                    <input type="text" class="form-control" placeholder="Last Name" name="l_name" value="{{ old('l_name') }}" required autofocus>
+
+
+
+                                    @if ($errors->has('l_name'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('l_name') }}</strong>
+                                    </span>
+                                    @endif
+
+
                                 </div>
                             </div>
                         </div>
                     </div>
                     {{--Email--}}
-                    <div class="form-group">
-                        <div class="form-group">
-                            <input id="email" type="email" class="form-control" placeholder="e-mail Address" name="email" required>
+                    <div class="form-group" style="height: 40px">
+                        <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}">
+                            <input type="email" class="form-control" placeholder="e-mail Address" name="email" required>
+
+
+                            @if ($errors->has('email'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                            @endif
+
+
+
+                        </div>
+                    </div>
+
+                    {{--Password--}}
+                    <div class="form-group" style="height: 40px">
+                        <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">
+                            <input type="password" class="form-control" placeholder="Password" name="password" required >
+
+                            @if ($errors->has('password'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                            @endif
+
+
+                        </div>
+                    </div>
+
+                    {{--re Password--}}
+                    <div class="form-group" style="height: 40px">
+                        <div class="form-group" >
+                            <input type="password" class="form-control" placeholder="re enter Password" name="password_confirmation" required>
                         </div>
                     </div>
 
 
+
+
+
                     {{--Phone Number--}}
-                    <div class="form-group">
+                    <div class="form-group" style="height: 40px">
                         <div class="form-group">
-                            <input id="phone" type="text" class="form-control" placeholder="Mobile Number" name="phone" required>
+                            <input type="text" class="form-control" placeholder="Mobile Number" name="phone" required>
                         </div>
                     </div>
 
                     {{--Date of Birth--}}
 
-                    <div class="form-group">
+                    <div class="form-group" style="height: 40px">
                         <div class="form-group">
-                            <input id="dob" type="text" class="form-control" placeholder="DOB [YYYY/MM/DD]" name="dob" required>
+                            <input type="text" class="form-control" placeholder="DOB [YYYY/MM/DD]" name="dob" required>
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group" style="height: 40px">
                         <div class="form-group">
-                            <input id="nerstCity" type="text" class="form-control" placeholder="Personal Address" name="ncity" required>
+                            <input type="text" class="form-control" placeholder="Personal Address" name="address" required>
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group" style="height: 40px">
                         <div class="form-group">
-                            <textarea rows="5" id="nerstCity"  type="text" class="form-control" placeholder="Personal Summery" name="ncity" required></textarea>
+                            <textarea rows="5" type="text" class="form-control" placeholder="Personal Summery" name="p_summery" required></textarea>
                            </div>
                     </div>
 
 
 
-                    <div class="form-group" style="width: 190px">
+                    <div class="form-group" style="width: 190px; margin-top: 110px; ">
                         <div class="">
                             <button type="submit" class="btnSubmit" style="margin-left: 100px">
-                                Signup
+                                Register
                             </button>
                         </div>
                     </div>
@@ -237,7 +263,7 @@
                 <h3>Signup as a Employee</h3>
             </div>
             <div class="panel-body">
-                <form class="form-horizontal" method="POST" action="{{ route('admin.login.submit') }}">
+                <form class="form-horizontal" method="POST" action="{{ route('admin.register') }}">
                     {{ csrf_field() }}
 
 
@@ -248,20 +274,20 @@
 
 
 
-            <div class="form-group">
-                <div class="form-group"  style="text-align: center" >
-                    <img id="blah1" src="https://bit.ly/2q98CcI"style="width: 150px; height: 150px" alt=""/><br>
-                    <label for="file-upload"style="margin-left:5px;color: #d9edf7">Upload Company Logo</label>
+            {{--<div class="form-group">--}}
+                {{--<div class="form-group"  style="text-align: center" >--}}
+                    {{--<img id="blah1" src="https://bit.ly/2q98CcI"style="width: 150px; height: 150px" alt=""/><br>--}}
+                    {{--<label for="file-upload"style="margin-left:5px;color: #d9edf7">Upload Company Logo</label>--}}
 
-                    <input type='file' onchange="readURL1(this);" style="margin-left: 100px;color:#f05837"/>
+                    {{--<input type='file' onchange="readURL1(this);" style="margin-left: 100px;color:#f05837"/>--}}
 
-                </div>
-            </div>
+                {{--</div>--}}
+            {{--</div>--}}
 
 
 
                     {{--Company Name--}}
-                    <div class="form-group">
+                    <div class="form-group"  style="height: 40px">
                         <div class="form-group">
                             <input id="c_name" type="text" class="form-control" placeholder="Company Name" name="c_name" required>
                         </div>
@@ -269,15 +295,15 @@
 
 
                     {{--email--}}
-                    <div class="form-group">
+                    <div class="form-group"  style="height: 40px">
                         <div class="form-group">
-                            <input id="c_email" type="text" class="form-control" placeholder="Company e-Mail" name="c_email" required>
+                            <input id="c_email" type="text" class="form-control" placeholder="Company e-Mail" name="email" required>
                         </div>
                     </div>
 
 
                     {{--Phone--}}
-                    <div class="form-group">
+                    <div class="form-group" style="height: 40px">
                         <div class="form-group">
                             <input id="c_phone" type="text" class="form-control" placeholder="Company Phone" name="c_phone" required>
                         </div>
@@ -286,17 +312,53 @@
 
 
                     {{--Location--}}
-                    <div class="form-group">
+                    <div class="form-group"  style="height: 40px">
                         <div class="form-group">
-                            <input id="c_location" type="text" class="form-control" placeholder="Nearest City" name="c_location" required>
+                            <input id="c_location" type="text" class="form-control" placeholder="Nearest City" name="c_city" required>
                         </div>
                     </div>
+
+                    {{--Password--}}
+                    <div class="form-group" style="height: 40px">
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Password" name="password" required >
+                        </div>
+                    </div>
+
+                    {{--re Password--}}
+                    <div class="form-group" style="height: 40px">
+                        <div class="form-group" >
+                            <input type="password" class="form-control" placeholder="re enter Password" name="password_confirmation" required>
+                        </div>
+                    </div>
+
+
+
+
+
+                    @foreach($errors->all() as $message)
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="alert alert-dismissible alert-danger">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    <strong>{!! $message !!}</strong>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
 
 
                     {{--Type--}}
                     <div class="form-group">
                         <div class="form-group">
-                            <input id="c_type" type="text" class="form-control" placeholder="Company Type" name="c_type" required>
+                            {{--<input id="c_type" type="text" class="form-control" placeholder="Company Type" name="c_type" required>--}}
+
+                            <select name="c_field">
+                                <option value="0">Select Company Type</option>
+                                <option value="1">Software</option>
+                                <option value="2">HR</option>
+                                <option value="3">Banking</option>
+                            </select>
                         </div>
                     </div>
 
