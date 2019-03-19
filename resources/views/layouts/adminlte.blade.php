@@ -62,8 +62,8 @@
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">Menu</li>
                 <!-- Optionally, you can add icons to the links -->
-                <li class="active"><a href="#"><i class="fa fa-link"></i> <span>New Vacancy</span></a></li>
-                <li><a href="#"><i class="fa fa-link"></i> <span>Posted Vacancies</span></a></li>
+                <li class="active"><a href="#"><i class="fa fa-link"></i> <span> <strong>Home</strong></span></a></li>
+                {{--<li><a href="#"><i class="fa fa-link"></i> <span>Posted Vacancies</span></a></li>--}}
 
             </ul>
             <!-- /.sidebar-menu -->
@@ -78,10 +78,6 @@
             <h1>
                 Employee Dash-Board
                 <br>
-
-
-
-
             </h1>
 
         </section>

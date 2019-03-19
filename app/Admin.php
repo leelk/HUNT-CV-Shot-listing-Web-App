@@ -33,4 +33,11 @@ class Admin extends Authenticatable
     {
         $this->notify(new AdminResetPasswordNotification($token));
     }
+
+    public function vacancies()
+    {
+        return $this->hasMany('App\Vacancies');
+    }
+
+
 }

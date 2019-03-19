@@ -20,6 +20,13 @@ Route::get('/sign',function (){
 return view('tione/uasignup');
 });
 
+Route::get('/job',function (){
+ return view('job/createJob');
+});
+
+
+
+
 
 
 Auth::routes();
