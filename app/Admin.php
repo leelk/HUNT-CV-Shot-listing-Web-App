@@ -7,6 +7,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Notifications\AdminResetPasswordNotification;
 class Admin extends Authenticatable
 {
+
+
+
     use Notifiable;
 
     protected $guard ='admin';
@@ -33,6 +36,7 @@ class Admin extends Authenticatable
     {
         $this->notify(new AdminResetPasswordNotification($token));
     }
+
 
     public function vacancies()
     {

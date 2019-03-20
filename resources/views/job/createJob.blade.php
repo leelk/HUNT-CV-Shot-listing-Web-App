@@ -26,9 +26,11 @@
     <!-- Main Header -->
     <header class="main-header">
 
+
         <!-- Logo -->
         <a  class="logo">
             <h5><strong>Employee Dashboard</strong></h5>
+            <a class="btn btn-primary" href="{{url('admin')}}" role="button">Back</a>
 
         </a>
 
@@ -45,6 +47,10 @@
             <div class="user-panel">
                 <div class="pull-left image">
                     <img src="{{asset('assets/images/avatar5.png')}}" class="img-circle" alt="User Image">
+
+                    <p><strong>{{Auth::user()->c_name}} </strong></p>
+                    <!-- Status -->
+                    <a href="#"><i class="fa fa-circle text-success"></i> {{Auth::user()->job_title}}</a>
                 </div>
                 <div class="pull-left info">
 
@@ -86,7 +92,7 @@
       <div class="col-md-11 col-md-offset-0" style="background-color: #ffffff ;" >
 
 
-          <form method="POST" >
+          <form method="POST" action="{{route('vacancy.create')}}">
                     {{csrf_field()}}
               <div class="container">
                   <div class="row">
@@ -168,6 +174,8 @@
                   </div>
                   </div>
               </div>
+              {{--<input type="text" class="form-control" name="user_id" >--}}
+
 
 
             <div class="container">

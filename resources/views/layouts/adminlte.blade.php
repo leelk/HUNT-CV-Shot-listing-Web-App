@@ -76,9 +76,14 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
+
+
+
+
                 Employee Dash-Board
                 <br>
             </h1>
+
 
         </section>
 
@@ -96,7 +101,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Create New <br> <STRONG>Vacancy</STRONG></span>
-                                <a href="#" class="small-box-footer">Click Here<i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="{{url('admin/job')}}" class="small-box-footer">Click Here<i class="fa fa-arrow-circle-right"></i></a>
                                 {{--<span class="info-box-number">90<small>%</small></span>--}}
                             </div>
                             <!-- /.info-box-content -->
@@ -113,7 +118,7 @@
                             <div class="info-box-content">
                                 <span class="info-box-text">All Vacancies</span>
                                 {{--<span class="info-box-number">41,410</span>--}}
-                                <a href="#" class="small-box-footer">Click Here <i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="{{url('/allj')}}" class="small-box-footer">Click Here <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                             <!-- /.info-box-content -->
                         </div>

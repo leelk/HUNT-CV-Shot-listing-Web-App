@@ -20,11 +20,22 @@ Route::get('/sign',function (){
 return view('tione/uasignup');
 });
 
-Route::get('/job',function (){
- return view('job/createJob');
-});
+//Route::get('/job',function (){
+// return view('job/createJob');
+//});
+
+Route::get('admin/job',[
+    'uses'=>'VacancyController@create',
+    'as' =>'create.vacancy',
+   'middleware'=>'auth:admin',
+]);
+
+Route::get('/allj','VacancyController@index')->name('all.vacancies');
 
 
+
+
+Route::post('/job','VacancyController@store')->name('vacancy.create');
 
 
 
@@ -44,6 +55,7 @@ Route::prefix('admin')->group(function (){
     Route::post('/register','Auth\AdminRegisterController@register')->name('admin.register');
     Route::get('/','AdminController@index')->name('admin.dashboard');
     Route::get('/logout','Auth\AdminLoginController@logout')->name('admin.logout');
+
 
 //  Password reset routes
 

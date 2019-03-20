@@ -2,11 +2,13 @@
 
 namespace App;
 
+use App\Admin;
+
 use Illuminate\Database\Eloquent\Model;
 
-class Vacancies extends Model
+    class Vacancies extends Model
 {
-    public function user()
+    public function admin()
     {
         return $this->belongsTo('App\Admin');
     }
