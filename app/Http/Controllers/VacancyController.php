@@ -38,8 +38,8 @@ class VacancyController extends Controller
 //        dd(Auth::user()->email);
 //        dd(Auth::user()->c_phone);
 //        return view('job.jobindex');
-
-        $vacancies = Admin::find(2)->Vacancies;
+$id = auth()->user()->id;
+        $vacancies = Admin::find($id)->Vacancies;
 
 
             return view('job.jobindex',compact('vacancies'));
@@ -78,7 +78,7 @@ class VacancyController extends Controller
         $vacancy->save();
 
 
-//        return redirect()->back()->with('message','Posted');
+        return redirect()->route('create.vacancy');
 
 
 

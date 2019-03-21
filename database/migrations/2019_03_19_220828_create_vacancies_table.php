@@ -23,7 +23,7 @@ class CreateVacanciesTable extends Migration
             $table->string('q3');
             $table->string('q4');
             $table->integer('salary');
-            $table->date('closedate');
+            $table->timestamps('closedate');
             $table->integer('admin_id');
             $table->timestamps();
         });

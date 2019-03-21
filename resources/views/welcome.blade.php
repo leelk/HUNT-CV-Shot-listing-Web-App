@@ -183,11 +183,6 @@
     </section>
     <!-- end intro section -->
 </div>
-
-
-
-
-
 <!-- Featured Jobs Section Start -->
 <section class="featured-jobs section">
     <div class="container">
@@ -195,6 +190,7 @@
             Featured Jobs
         </h2>
         <div class="row">
+            @foreach($vacancies as $vacancy)
             <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="featured-item">
                     <div class="featured-wrap">
@@ -205,13 +201,13 @@
                                 </a>
                             </figure>
                             <div class="item-body">
-                                <h3 class="job-title"><a href="job-page.html">Graphic Designer</a></h3>
-                                <div class="adderess"><i class="ti-location-pin"></i> Dallas, United States</div>
+                                <h3 class="job-title"><a href="job-page.html">{{$vacancy->title}}</a></h3>
+                                <div class="adderess"><i class="ti-location-pin"></i> {{$vacancy->description}}</div>
                             </div>
                         </div>
                     </div>
                     <div class="item-foot">
-                        <span><i class="ti-calendar"></i> 4 months ago</span>
+                        <span><i class="ti-calendar"></i> {{$vacancy->created_at->diffForHumans()}}</span>
                         <span><i class="ti-time"></i> Full Time</span>
                         <div class="view-iocn">
                             <a href="job-page.html"><i class="ti-arrow-right"></i></a>
@@ -219,126 +215,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="featured-item">
-                    <div class="featured-wrap">
-                        <div class="featured-inner">
-                            <figure class="item-thumb">
-                                <a class="hover-effect" href="job-page.html">
-                                    <img src="{{asset('assets')}}/assets/img/features/img-2.jpg" alt="">
-                                </a>
-                            </figure>
-                            <div class="item-body">
-                                <h3 class="job-title"><a href="job-page.html">Software Engineer</a></h3>
-                                <div class="adderess"><i class="ti-location-pin"></i> Delaware, United States</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-foot">
-                        <span><i class="ti-calendar"></i> 5 months ago</span>
-                        <span><i class="ti-time"></i> Part Time</span>
-                        <div class="view-iocn">
-                            <a href="job-page.html"><i class="ti-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="featured-item">
-                    <div class="featured-wrap">
-                        <div class="featured-inner">
-                            <figure class="item-thumb">
-                                <a class="hover-effect" href="job-page.html">
-                                    <img src="{{asset('assets')}}/assets/img/features/img-3.jpg" alt="">
-                                </a>
-                            </figure>
-                            <div class="item-body">
-                                <h3 class="job-title"><a href="job-page.html">Managing Director</a></h3>
-                                <div class="adderess"><i class="ti-location-pin"></i> NY, United States</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-foot">
-                        <span><i class="ti-calendar"></i> 3 months ago</span>
-                        <span><i class="ti-time"></i> Full Time</span>
-                        <div class="view-iocn">
-                            <a href="job-page.html"><i class="ti-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="featured-item">
-                    <div class="featured-wrap">
-                        <div class="featured-inner">
-                            <figure class="item-thumb">
-                                <a class="hover-effect" href="job-page.html">
-                                    <img src="{{asset('assets')}}/assets/img/features/img-3.jpg" alt="">
-                                </a>
-                            </figure>
-                            <div class="item-body">
-                                <h3 class="job-title"><a href="job-page.html">Graphic Designer</a></h3>
-                                <div class="adderess"><i class="ti-location-pin"></i> Washington, United States</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-foot">
-                        <span><i class="ti-calendar"></i> 1 months ago</span>
-                        <span><i class="ti-time"></i> Part Time</span>
-                        <div class="view-iocn">
-                            <a href="job-page.html"><i class="ti-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="featured-item">
-                    <div class="featured-wrap">
-                        <div class="featured-inner">
-                            <figure class="item-thumb">
-                                <a class="hover-effect" href="job-page.html">
-                                    <img src="{{asset('assets')}}/assets/img/features/img-2.jpg" alt="">
-                                </a>
-                            </figure>
-                            <div class="item-body">
-                                <h3 class="job-title"><a href="job-page.html">Software Engineer</a></h3>
-                                <div class="adderess"><i class="ti-location-pin"></i> Dallas, United States</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-foot">
-                        <span><i class="ti-calendar"></i> 6 months ago</span>
-                        <span><i class="ti-time"></i> Full Time</span>
-                        <div class="view-iocn">
-                            <a href="job-page.html"><i class="ti-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="featured-item">
-                    <div class="featured-wrap">
-                        <div class="featured-inner">
-                            <figure class="item-thumb">
-                                <a class="hover-effect" href="job-page.html">
-                                    <img src="{{asset('assets')}}/assets/img/features/img-1.jpg" alt="">
-                                </a>
-                            </figure>
-                            <div class="item-body">
-                                <h3 class="job-title"><a href="job-page.html">Managing Director</a></h3>
-                                <div class="adderess"><i class="ti-location-pin"></i> NY, United States</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-foot">
-                        <span><i class="ti-calendar"></i> 7 months ago</span>
-                        <span><i class="ti-time"></i> Part Time</span>
-                        <div class="view-iocn">
-                            <a href="job-page.html"><i class="ti-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

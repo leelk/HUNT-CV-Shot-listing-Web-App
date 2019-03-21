@@ -11,9 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('/',[
+    'uses'=>'WelcomeController@index',
+    'as' =>'show.index',
+
+]);
+
+
+
+
+
 
 
 Route::get('/sign',function (){
@@ -30,7 +41,15 @@ Route::get('admin/job',[
    'middleware'=>'auth:admin',
 ]);
 
-Route::get('/allj','VacancyController@index')->name('all.vacancies');
+Route::get('/allj',[
+    'uses'=>'VacancyController@index',
+    'as' =>'show.vacancy',
+    'middleware'=>'auth:admin',
+]);
+
+
+//
+//Route::get('/allj','VacancyController@index')->name('all.vacancies');
 
 
 
