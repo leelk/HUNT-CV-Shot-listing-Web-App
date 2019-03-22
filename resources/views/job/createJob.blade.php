@@ -92,8 +92,16 @@
       <div class="col-md-11 col-md-offset-0" style="background-color: #ffffff ;" >
 
 
-          <form method="POST" action="{{route('vacancy.create')}}">
+          <form method="POST" action="{{route('vacancy.create')}}" enctype="multipart/form-data">
                     {{csrf_field()}}
+
+
+
+
+
+
+
+
               <div class="container">
                   <div class="row">
                       <div class="col-sm-4">
@@ -116,6 +124,31 @@
                       </div>
                   </div>
               </div>
+
+
+              <div class="container">
+
+
+
+
+
+                      {{--Profile Image--}}
+
+                      <div class="form-group">
+                          <div class="form-group"   >
+                              <img id="blah" src="" alt=""/><br>
+                              <label for="file-upload">Upload a Profile Photo</label>
+
+                              <input type='file' name="image" onchange="readURL(this);"/>
+
+                          </div>
+                      </div>
+                  </div>
+
+
+
+
+
 
 
               <div class="container">
@@ -213,7 +246,39 @@
 
     </div>
 </div>
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
 
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result)
+                    .height(200);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+
+
+    function readURL1(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah1')
+                    .attr('src', e.target.result)
+
+                    .height(200);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+</script>
 
 <script src="{{asset('js/app.js')}}"></script>
 

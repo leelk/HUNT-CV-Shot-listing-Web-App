@@ -197,7 +197,8 @@
                         <div class="featured-inner">
                             <figure class="item-thumb">
                                 <a class="hover-effect" href="job-page.html">
-                                    <img src="{{asset('assets')}}/assets/img/features/img-1.jpg" alt="">
+                                    {{--<img src="{{asset('assets')}}/assets/img/features/img-2.jpg" alt="">--}}
+                                    <img src="{{Storage::disk('local')->url($vacancy->image)}}" alt="">
                                 </a>
                             </figure>
                             <div class="item-body">

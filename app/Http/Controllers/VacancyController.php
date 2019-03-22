@@ -64,6 +64,14 @@ $id = auth()->user()->id;
      */
     public function store(Request $request)
     {
+
+        if($request->hasFile('image')){
+
+
+          $image= $request->image->store('public');
+        }
+
+
         $vacancy = new Vacancies();
         $vacancy->title = $request['title'];
         $vacancy->position = $request['position'];
@@ -74,6 +82,7 @@ $id = auth()->user()->id;
         $vacancy->q4 = $request['q4'];
         $vacancy->salary = $request['salary'];
         $vacancy->closedate = $request['closedate'];
+        $vacancy->image = $image;
         $vacancy->admin_id = auth()->user()->id;
         $vacancy->save();
 
