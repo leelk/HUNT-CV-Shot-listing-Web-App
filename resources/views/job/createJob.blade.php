@@ -30,7 +30,7 @@
         <!-- Logo -->
         <a  class="logo">
             <h5><strong>Employee Dashboard</strong></h5>
-            <a class="btn btn-primary" href="{{url('admin')}}" role="button">Back</a>
+            <a class="btn btn-primary" href="{{url('admin')}}" role="button">Home</a>
 
         </a>
 
@@ -69,7 +69,7 @@
                 <li class="header">Menu</li>
                 <!-- Optionally, you can add icons to the links -->
                 <li class="active"><a href="#"><i class="fa fa-link"></i> <span>New Vacancy</span></a></li>
-                <li><a href="#"><i class="fa fa-link"></i> <span>Posted Vacancies</span></a></li>
+                <li><a href="{{route('show.vacancy')}}"><i class="fa fa-link"></i> <span>Posted Vacancies</span></a></li>
 
             </ul>
             <!-- /.sidebar-menu -->

@@ -109,7 +109,7 @@ $id = auth()->user()->id;
      */
     public function show($id)
     {
-        //
+
     }
 
     /**

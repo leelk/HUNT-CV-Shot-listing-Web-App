@@ -62,7 +62,7 @@ Route::post('/job','VacancyController@store')->name('vacancy.create');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/users/logout','Auth\LoginController@userLogout')->name('user.logout ');
+Route::get('/users/logout','Auth\LoginController@userLogout')->name('user.logout');
 Route::get('/signup','Auth\RegisterController@showRegistrationForm')->name('users.signup.submit');
 
 

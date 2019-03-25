@@ -59,69 +59,33 @@
                         <a class="navbar-brand logo" href="{{url('/')}}"><img src="{{asset('assets')}}/assets/img/logo.PNG" alt="" style="height: 50px;"></a>
                     </div>
 
-                    <div class="collapse navbar-collapse" id="navbar">
-                        <!-- Start Navigation List -->
-                        <ul class="nav navbar-nav">
-                            <li>
-                                <a href="{{route('admin.login.submit')}}">
-                                    Login <i class="fa fa-angle-down"></i>
-                                </a>
-                                {{--<ul class="dropdown">--}}
-                                    {{--<li>--}}
-                                        {{--<a href="job-alerts.html">--}}
-                                            {{--<strong>Signup/Loging </strong>--}}
-                                        {{--</a>--}}
-                                    {{--</li>--}}
-                                {{--</ul>--}}
-                            </li>
-                            <li>
-                                <a href="{{route('users.signup.submit')}}">
-                                    Signup <i class="fa fa-angle-down"></i>
-                                </a>
-                                {{--<ul class="dropdown">--}}
-                                    {{--<li>--}}
-                                        {{--<a href="{{route('admin.login.submit')}}">--}}
-                                           {{--Signup / Login--}}
-                                        {{--</a>--}}
-                                    {{--</li>--}}
-                                {{--</ul>--}}
-                            </li>
-                        </ul>
+
+@if(!Auth::check()== true)
+
+                    <ul class="nav navbar-nav navbar-right float-right" style="">
+                        <li class="right" style="margin-right: 5px;"><a href="{{route('admin.login.submit')}}"><i class=""></i>  Log In</a></li>
+                        <li class="right" style="margin-right: -90px;"><a href="{{route('users.signup.submit')}}"><i class=""></i>  Sign Up</a></li>
+                    </ul>
+
+    @elseif(Auth::check() == true)
+                    <ul class="nav navbar-nav navbar-right float-right" style="">
+                        <li class="right" style="margin-right: 5px;"><a href="{{route('admin.login.submit')}}"><i class=""></i>Hello {{auth::user()->f_name}}</a></li>
+                        <li class="right" style="margin-right: -90px;"><a href="{{route('user.logout')}}"><i class=""></i>Log out</a></li>
+                    </ul>
 
 
 
-{{--menthib straty --}}
-
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-sm-8">
-
-                                </div>
-                                <div class="col-sm-1">
-
-                                </div>
-                                <div class="col-sm-3">
-                                    <?php
-
-                                    use Illuminate\Support\Facades\Auth;
-
-                                    if(Auth::guard('admin')->check()== true)
-                                    {
-                                        echo "<h3>You are login as a Employee</h3>";
-
-                                    }
 
 
-                                    ?>
-
-                                </div>
-                            </div>
-                        </div>
+    @endif
 
 
 
-<!--methanin iwarai-->
-                    </div>
+
+
+
+
+
                 </div>
             </nav>
         </div>
@@ -192,13 +156,13 @@
         <div class="row">
             @foreach($vacancies as $vacancy)
             <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="featured-item">
+                <div class="featured-item" >
                     <div class="featured-wrap">
                         <div class="featured-inner">
                             <figure class="item-thumb">
                                 <a class="hover-effect" href="job-page.html">
                                     {{--<img src="{{asset('assets')}}/assets/img/features/img-2.jpg" alt="">--}}
-                                    <img src="{{Storage::disk('local')->url($vacancy->image)}}" alt="">
+                                    <img src="{{Storage::disk('local')->url($vacancy->image)}}" alt="" style="height: 250px; width: 350px;">
                                 </a>
                             </figure>
                             <div class="item-body">
