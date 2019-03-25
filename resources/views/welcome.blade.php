@@ -160,7 +160,7 @@
                     <div class="featured-wrap">
                         <div class="featured-inner">
                             <figure class="item-thumb">
-                                <a class="hover-effect" href="job-page.html">
+                                <a class="hover-effect" href="{{route('applyJob')}}">
                                     {{--<img src="{{asset('assets')}}/assets/img/features/img-2.jpg" alt="">--}}
                                     <img src="{{Storage::disk('local')->url($vacancy->image)}}" alt="" style="height: 250px; width: 350px;">
                                 </a>
@@ -175,7 +175,7 @@
                         <span><i class="ti-calendar"></i> {{$vacancy->created_at->diffForHumans()}}</span>
                         <span><i class="ti-time"></i> Full Time</span>
                         <div class="view-iocn">
-                            <a href="job-page.html"><i class="ti-arrow-right"></i></a>
+                            <a href="{{route('applyJob')}}"><i class="ti-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

@@ -21,7 +21,7 @@ Route::get('/',[
 
 ]);
 
-
+Route::get('send','mailController@send');
 
 
 
@@ -45,6 +45,12 @@ Route::get('/allj',[
     'uses'=>'VacancyController@index',
     'as' =>'show.vacancy',
     'middleware'=>'auth:admin',
+]);
+
+Route::get('/applyJob/{id}',[
+    'uses'=>'UserVacancyController@create',
+    'as'=>'applyJob',
+    'middleware'=>'auth:web',
 ]);
 
 

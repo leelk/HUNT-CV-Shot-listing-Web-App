@@ -7,6 +7,7 @@ use http\Client\Curl\User;
 use Illuminate\Http\Request;
 use App\Admin;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 
 class VacancyController extends Controller
@@ -25,6 +26,25 @@ class VacancyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+//    public function send()
+//    {
+//
+//        $toEmail = auth::user()->email;
+//
+//
+//
+//
+//        Mail::send(['text'=>'mail'],['name','Leel'],function ($message){
+//            $message->to()->subject('Hunt Registration');
+//            $message->from('leelkarunarathne@gmail.com','Hunt');
+//        });
+//        //return redirect()->route('create.vacancy');
+//    }
+
+
+
     public function index()
     {
 
@@ -86,8 +106,8 @@ $id = auth()->user()->id;
         $vacancy->admin_id = auth()->user()->id;
         $vacancy->save();
 
-
-        return redirect()->route('create.vacancy');
+//$this->send();
+      return redirect()->route('create.vacancy');
 
 
 
@@ -145,4 +165,6 @@ $id = auth()->user()->id;
     {
         //
     }
+
+
 }

@@ -8,6 +8,12 @@
                 <div class="panel-heading">User Dashboard</div>
 
                 <div class="panel-body">
+
+
+
+                    {{dd(auth::user()->id)}}
+
+
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
