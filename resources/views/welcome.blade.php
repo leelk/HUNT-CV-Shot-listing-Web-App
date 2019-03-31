@@ -69,7 +69,7 @@
 
     @elseif(Auth::check() == true)
                     <ul class="nav navbar-nav navbar-right float-right" style="">
-                        <li class="right" style="margin-right: 5px;"><a href="{{route('admin.login.submit')}}"><i class=""></i>Hello {{auth::user()->f_name}}</a></li>
+                        <li class="right" style="margin-right: 5px;"><a href="{{route('home')}}"><i class=""></i>Hello {{auth::user()->f_name}}</a></li>
                         <li class="right" style="margin-right: -90px;"><a href="{{route('user.logout')}}"><i class=""></i>Log out</a></li>
                     </ul>
 

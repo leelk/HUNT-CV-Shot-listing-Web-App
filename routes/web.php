@@ -47,7 +47,7 @@ Route::get('/allj',[
     'middleware'=>'auth:admin',
 ]);
 
-Route::get('/applyJob/{id}',[
+Route::get('/applyJo',[
     'uses'=>'UserVacancyController@create',
     'as'=>'applyJob',
     'middleware'=>'auth:web',

@@ -8,21 +8,28 @@
                 <div class="panel-heading">User Dashboard</div>
 
                 <div class="panel-body">
+{{--                    {{dd(auth::user()->id)}}--}}
+                        {{dd(auth::user()->f_name)}}
+
+{{--                    @if (session('status'))--}}
+{{--                        <div class="alert alert-success">--}}
+{{--                            {{ session('status') }}--}}
+{{--                        </div>--}}
+{{--                    @endif--}}
+{{--                    @component('components.who')--}}
+{{--                        @endcomponent--}}
 
 
 
-                    {{dd(auth::user()->id)}}
 
 
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
 
-                    @component('components.who')
 
-                        @endcomponent
+
+
+
+
+
                 </div>
             </div>
         </div>
