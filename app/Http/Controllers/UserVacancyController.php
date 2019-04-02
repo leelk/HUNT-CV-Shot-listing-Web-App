@@ -12,9 +12,10 @@ class UserVacancyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index( Vacancies $id)
     {
-        //
+
+        return view('job.clickJob',compact('id'));
     }
 
     /**
@@ -26,7 +27,7 @@ class UserVacancyController extends Controller
     {
 
 
-        return view('job.clickJob');
+
 
     }
 

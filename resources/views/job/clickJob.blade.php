@@ -101,6 +101,23 @@
         <h2 class="section-title">
             Featured Jobs
         </h2>
+        <div>
+            <h3>{{$id->title}}</h3>
+            <br>
+            <br>
+            <img src="{{Storage::disk('local')->url($id->image)}}" alt="" style="height: 250px; width: 350px;">
+
+        </div>
+
+
+        <form action="">
+            <strong><p>{{$id->q1}}</p></strong>
+            <input type="number" min="0" max="10">
+
+
+        </form>
+
+
         <div class="row">
 
 

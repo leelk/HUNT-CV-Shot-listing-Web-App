@@ -12,4 +12,10 @@ use Illuminate\Database\Eloquent\Model;
     {
         return $this->belongsTo('App\Admin');
     }
+
+    public function getRouteKey()
+    {
+        return 'id';
+    }
+
 }

@@ -69,7 +69,7 @@
 
     @elseif(Auth::check() == true)
                     <ul class="nav navbar-nav navbar-right float-right" style="">
-                        <li class="right" style="margin-right: 5px;"><a href="{{route('home')}}"><i class=""></i>Hello {{auth::user()->f_name}}</a></li>
+                        <li class="right" style="margin-right: 5px;"><a href="{{route('admin.login.submit')}}"><i class=""></i>Hello {{auth::user()->f_name}}</a></li>
                         <li class="right" style="margin-right: -90px;"><a href="{{route('user.logout')}}"><i class=""></i>Log out</a></li>
                     </ul>
 
@@ -160,7 +160,7 @@
                     <div class="featured-wrap">
                         <div class="featured-inner">
                             <figure class="item-thumb">
-                                <a class="hover-effect" href="{{route('applyJob')}}">
+                                <a class="hover-effect" href="{{route('applyJob',$vacancy->id)}}">
                                     {{--<img src="{{asset('assets')}}/assets/img/features/img-2.jpg" alt="">--}}
                                     <img src="{{Storage::disk('local')->url($vacancy->image)}}" alt="" style="height: 250px; width: 350px;">
                                 </a>

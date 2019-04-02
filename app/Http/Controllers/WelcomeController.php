@@ -12,7 +12,7 @@ class WelcomeController extends Controller
 //        $vacancies = Vacancies::all();
 
 
-        $vacancies = Vacancies::orderBy('id', 'desc')->take(6)->get();
+        $vacancies = Vacancies::orderBy('id', 'desc')->take(100)->get();
 
 
 
