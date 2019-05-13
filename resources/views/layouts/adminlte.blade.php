@@ -135,8 +135,8 @@
                             <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Sales</span>
-                                <span class="info-box-number">760</span>
+                                <span class="info-box-text">Respondings</span>
+                                <span class="info-box-number">12</span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -148,10 +148,10 @@
                             <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">New Members</span>
-                                <span class="info-box-number">2,000</span>
+                                <span class="info-box-text">Candidates works</span>
+                                <span class="info-box-number">2</span>
                             </div>
-                            <!-- /.info-box-content -->
+{{--                            <!-- /.info-box-content -->--}}
                         </div>
                         <!-- /.info-box -->
                     </div>

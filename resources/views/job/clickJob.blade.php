@@ -98,35 +98,55 @@
 <!-- Featured Jobs Section Start -->
 <section class="featured-jobs section">
     <div class="container">
-        <h2 class="section-title">
-            Featured Jobs
-        </h2>
-        <div>
-            <h3>{{$id->title}}</h3>
-            <br>
-            <br>
-            <img src="{{Storage::disk('local')->url($id->image)}}" alt="" style="height: 250px; width: 350px;">
-
-        </div>
-
-
-        <form action="">
-            <strong><p>{{$id->q1}}</p></strong>
-            <input type="number" min="0" max="10">
-
-
-        </form>
-
-
         <div class="row">
+            <div class="col-md-6">
+                <h1>{{$data[0]->title}}</h1>
+                <h2>{{$data[0]->c_name}}</h2>
+                <p style="width: 360px"><strong>{{$data[0]->description}}</strong></p>
+                <br>
+
+                <img src="{{Storage::disk('local')->url($data[0]->image)}}" alt="" style="height: 250px; width: 350px;">
+
+            </div>
+            <div class="col-md-6">
+                <form action="">
+
+                    <div>
+
+                    <input class="form-control" type="text" placeholder="{{$data[0]->q1}}" readonly style="width: 250px">
+                    <H5>Select Your level :</H5><input type="number" min="0" max="10">
+
+                    </div>
 
 
 
+{{--                    <input class="form-control" type="text" placeholder="{{$id->q2}}" readonly style="width: 250px">--}}
+{{--                    <H5>Select Your level :</H5><input type="number" min="0" max="10">--}}
 
 
-
+                    <input type="submit" >
+                </form>
+            </div>
         </div>
+
+{{--        <div class="row">--}}
+{{--            <div class="col-md-6">--}}
+{{--                <h1>{{$id->title}}</h1>--}}
+{{--                <p style="width: 360px"><strong>{{$id->description}}</strong></p>--}}
+{{--                <br>--}}
+
+{{--                <img src="{{Storage::disk('local')->url($id->image)}}" alt="" style="height: 250px; width: 350px;">--}}
+
+{{--            </div>--}}
+{{--        </div>--}}
+
+
+
+
     </div>
+
+
+
 </section>
 <!-- Featured Jobs Section End -->
 

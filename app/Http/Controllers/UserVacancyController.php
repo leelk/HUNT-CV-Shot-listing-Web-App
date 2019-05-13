@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Vacancies;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserVacancyController extends Controller
 {
@@ -15,7 +16,18 @@ class UserVacancyController extends Controller
     public function index( Vacancies $id)
     {
 
-        return view('job.clickJob',compact('id'));
+    $Vid= $id->id;
+
+        $data = DB::table('vacancies')
+            ->join('admins','vacancies.admin_id','=','admins.id')
+            ->select('admins.c_name','vacancies.title','vacancies.position','vacancies.image','vacancies.description','vacancies.q1')
+            ->where('vacancies.id','=',$Vid)
+            ->get();
+
+
+//        dd($data);
+
+        return view('job.clickJob',compact('data'));
     }
 
     /**

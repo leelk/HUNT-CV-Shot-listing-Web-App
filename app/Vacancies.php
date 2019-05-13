@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Model;
 
     public function getRouteKey()
     {
+
         return 'id';
     }
 
