@@ -155,7 +155,7 @@
         </h2>
         <div class="row">
             @foreach($vacancies as $vacancy)
-            <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="col-md-4 col-sm-6 col-xs-12" style="height: 550px">
                 <div class="featured-item" >
                     <div class="featured-wrap">
                         <div class="featured-inner">

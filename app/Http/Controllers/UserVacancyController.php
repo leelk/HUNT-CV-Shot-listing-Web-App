@@ -20,7 +20,7 @@ class UserVacancyController extends Controller
 
         $data = DB::table('vacancies')
             ->join('admins','vacancies.admin_id','=','admins.id')
-            ->select('admins.c_name','vacancies.title','vacancies.position','vacancies.image','vacancies.description','vacancies.q1')
+            ->select('admins.c_name','admins.email','admins.c_phone','admins.c_city','vacancies.title','vacancies.position','vacancies.image','vacancies.description','vacancies.q1')
             ->where('vacancies.id','=',$Vid)
             ->get();
 

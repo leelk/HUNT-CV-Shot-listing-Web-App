@@ -35,9 +35,13 @@
     <!-- Responsive CSS Styles -->
     <link rel="stylesheet" href="{{asset('assets')}}/assets/css/responsive.css" type="text/css">
 
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     <!-- Color CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/assets/css/colors/red.css" media="screen" />
 
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 </head>
 
 <body>
@@ -100,23 +104,88 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
+
+                <div class="box">
                 <h1>{{$data[0]->title}}</h1>
-                <h2>{{$data[0]->c_name}}</h2>
-                <p style="width: 360px"><strong>{{$data[0]->description}}</strong></p>
+
+
+
+
+                <p align="justify" style="width: 360px"><strong>{{$data[0]->description}}</strong></p>
                 <br>
 
                 <img src="{{Storage::disk('local')->url($data[0]->image)}}" alt="" style="height: 250px; width: 350px;">
 
+
+                <br><br>
+
+
+
+
+                    <h2 style="width: 510px"><span class="glyphicon glyphicon-home"></span> {{$data[0]->c_name}}</h2>
+
+
+
+                    <h5>    &nbsp <i class='fas fa-at'></i> {{$data[0]->email}}</h5>
+                    <h5>    &nbsp <i class='fas fa-phone'></i> {{$data[0]->c_phone}}</h5>
+                    <h5>    &nbsp <i class='fas fa-map-marker-alt'></i> {{$data[0]->c_city}}</h5>
+
+
+
+
+                </div>
+
+
+
+                <style>
+                    .box {
+                        width: 420px;
+                        padding: 10px;
+                        border: 2px solid black;
+                        margin: 0;
+                    }
+                </style>
+
+
+
             </div>
+
+
             <div class="col-md-6">
-                <form action="">
+                <h2>Rate Your experince</h2>
 
-                    <div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                            <input class="form-control" type="text" placeholder="{{$data[0]->q1}}" readonly style="width: 250px">
+                                <input class="ins" type="number" min="0" max="10">
 
-                    <input class="form-control" type="text" placeholder="{{$data[0]->q1}}" readonly style="width: 250px">
-                    <H5>Select Your level :</H5><input type="number" min="0" max="10">
+                            </div>
 
+                            <div class="col-sm-3">
+                                <br>
+                            </div>
+                        </div>
                     </div>
+
+
+
+                </div>
+
+
+
+
+
+<style>
+    .ins{
+        width: 52px;
+        height: 125px;
+    }
+</style>
+
+
+{{--                <form action="">--}}
+
 
 
 
@@ -124,10 +193,10 @@
 {{--                    <H5>Select Your level :</H5><input type="number" min="0" max="10">--}}
 
 
-                    <input type="submit" >
-                </form>
-            </div>
-        </div>
+{{--                    <input type="submit" >--}}
+{{--                </form>--}}
+{{--            </div>--}}
+{{--        </div>--}}
 
 {{--        <div class="row">--}}
 {{--            <div class="col-md-6">--}}
@@ -143,11 +212,15 @@
 
 
 
-    </div>
+{{--    </div>--}}
 
 
 
-</section>
+
+
+
+
+{{--</section>--}}
 <!-- Featured Jobs Section End -->
 
 <!-- Main JS  -->
