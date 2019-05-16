@@ -156,14 +156,90 @@
 
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-4">
-                            <input class="form-control" type="text" placeholder="{{$data[0]->q1}}" readonly style="width: 250px">
-                                <input class="ins" type="number" min="0" max="10">
+                            <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                                {{ csrf_field() }}
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <input class="form-control" type="text" placeholder="{{$data[0]->q1}}" readonly style="width: 250px">
+                                        <select name="qulification1" class="droped">
+                                            <option value="0">Rate your skill </option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <input class="form-control" type="text" placeholder="{{$data[0]->q2}}" readonly style="width: 250px">
+                                        <select name="qulification2" class="droped">
+                                            <option value="0">Rate your skill </option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <input class="form-control" type="text" placeholder="{{$data[0]->q3}}" readonly style="width: 250px">
+                                        <select name="qulification3" class="droped">
+                                            <option value="0">Rate your skill </option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <input class="form-control" type="text" placeholder="{{$data[0]->q4}}" readonly style="width: 250px">
+                                        <select name="qulification4" class="droped">
+                                            <option value="0">Rate your skill </option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                <div class="form-group">
+                                    <div class="col-md-6 col-md-offset-4">
+                                        <button type="submit" class="btn btn-primary">
+                                            submit
+                                        </button>
+                                    </div>
+                                </div>
 
-                            </div>
-
-                            <div class="col-sm-3">
-                                <br>
+                            </form>
                             </div>
                         </div>
                     </div>
@@ -181,6 +257,8 @@
         width: 52px;
         height: 125px;
     }
+
+
 </style>
 
 
