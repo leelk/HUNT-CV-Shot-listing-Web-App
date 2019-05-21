@@ -198,7 +198,7 @@
                     </div>
                     <div class="desc">
                         <h2>Jobs</h2>
-                        <h1 class="counter">12050</h1>
+                        <h1 class="counter">24</h1>
                     </div>
                 </div>
             </div>
@@ -209,7 +209,7 @@
                     </div>
                     <div class="desc">
                         <h2>Members</h2>
-                        <h1 class="counter">10890</h1>
+                        <h1 class="counter">10</h1>
                     </div>
                 </div>
             </div>
@@ -221,7 +221,7 @@
                     </div>
                     <div class="desc">
                         <h2>Company</h2>
-                        <h1 class="counter">9050</h1>
+                        <h1 class="counter">3</h1>
                     </div>
                 </div>
             </div>
