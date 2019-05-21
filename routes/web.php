@@ -62,7 +62,7 @@ Route::get('/applyJo/{id?}',[
 
 Route::post('/job','VacancyController@store')->name('vacancy.create');
 
-
+Route::post('/scores','ScoreController@store')->name('score.save');
 
 
 Auth::routes();

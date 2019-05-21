@@ -2,32 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Score;
 use App\Vacancies;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 
-class UserVacancyController extends Controller
+class ScoreController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index( Vacancies $id)
+    public function index()
     {
-
-    $Vid= $id->id;
-
-        $data = DB::table('vacancies')
-            ->join('admins','vacancies.admin_id','=','admins.id')
-            ->select('admins.c_name','admins.email','admins.c_phone','admins.c_city','vacancies.title','vacancies.id','vacancies.position','vacancies.image','vacancies.description','vacancies.q1','vacancies.q2','vacancies.q3','vacancies.q4')
-            ->where('vacancies.id','=',$Vid)
-            ->get();
-
-
-//        dd($data);
-
-        return view('job.clickJob',compact('data'));
+        //
     }
 
     /**
@@ -37,10 +26,7 @@ class UserVacancyController extends Controller
      */
     public function create()
     {
-
-
-
-
+        //
     }
 
     /**
@@ -51,7 +37,19 @@ class UserVacancyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $score = new Score();
+        $score->user_id = auth()->user()->id;
+        $score->vacancy_id= $request['invisible'];
+        $score->q1_score = $request['qulification1'];
+        $score->q2_score = $request['qulification2'];
+        $score->q3_score = $request['qulification3'];
+        $score->q4_score = $request['qulification4'];
+        $score->save();
+
+        return Redirect::back()->withErrors(['Your Score has been saved successfully']);
+
+
+
     }
 
     /**

@@ -108,7 +108,7 @@
                 <div class="box">
                 <h1>{{$data[0]->title}}</h1>
 
-
+{{--{{dd($data[0]->id)}}--}}
 
 
                 <p align="justify" style="width: 360px"><strong>{{$data[0]->description}}</strong></p>
@@ -156,11 +156,16 @@
 
                     <div class="container">
                         <div class="row">
-                            <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                            <form class="form-horizontal" method="POST" action="{{ route('score.save') }}">
                                 {{ csrf_field() }}
                                 <div class="form-group">
                                     <div class="col-md-6">
-                                        <input class="form-control" type="text" placeholder="{{$data[0]->q1}}" readonly style="width: 250px">
+
+                                        <input name="invisible" type="hidden" value="{{$data[0]->id}}">
+
+
+
+                                        <input class="form-control" id="qulificate" type="text" placeholder="{{$data[0]->q1}}" readonly style="width: 250px">
                                         <select name="qulification1" class="droped">
                                             <option value="0">Rate your skill </option>
                                             <option value="1">1</option>
@@ -178,7 +183,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-6">
-                                        <input class="form-control" type="text" placeholder="{{$data[0]->q2}}" readonly style="width: 250px">
+                                        <input class="form-control" type="text" id="qulificate1" placeholder="{{$data[0]->q2}}" readonly style="width: 250px">
                                         <select name="qulification2" class="droped">
                                             <option value="0">Rate your skill </option>
                                             <option value="1">1</option>
@@ -196,7 +201,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-6">
-                                        <input class="form-control" type="text" placeholder="{{$data[0]->q3}}" readonly style="width: 250px">
+                                        <input class="form-control" type="text" id="qulificate2" placeholder="{{$data[0]->q3}}" readonly style="width: 250px">
                                         <select name="qulification3" class="droped">
                                             <option value="0">Rate your skill </option>
                                             <option value="1">1</option>
@@ -214,7 +219,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-6">
-                                        <input class="form-control" type="text" placeholder="{{$data[0]->q4}}" readonly style="width: 250px">
+                                        <input class="form-control" type="text" id="qulificate3" placeholder="{{$data[0]->q4}}" readonly style="width: 250px">
                                         <select name="qulification4" class="droped">
                                             <option value="0">Rate your skill </option>
                                             <option value="1">1</option>
@@ -239,6 +244,21 @@
                                     </div>
                                 </div>
 
+
+
+
+
+                                        @if($errors->any())
+                                        <div class="alert alert-success" role="alert">
+                                            <h4>{{$errors->first()}}</h4>
+                                        </div>
+                                @endif
+
+
+
+
+
+
                             </form>
                             </div>
                         </div>
@@ -256,6 +276,27 @@
     .ins{
         width: 52px;
         height: 125px;
+
+
+    }
+
+    .droped{
+        color: black;
+        border-radius: 5px;
+        background-color:ivory;
+        height: 40px;
+    }
+
+    #qulificate{
+        color: white;
+        background-color: black;
+
+    }
+
+    #qulificate2,#qulificate3,#qulificate1{
+        color: white;
+        background-color: black;
+
     }
 
 
